@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SmokerShop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="logo" onclick="goHome()">SMOKER<span class="accent">SHOP</span></div>
+        <div class="cart-icon" onclick="openCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count" class="cart-badge">0</span>
+        </div>
+    </header>
+
+    <section id="view-home" class="view active">
+        <div class="hero-banner">
+            <h1><img src="img/zxc.png" </h1>
+            <p>  </p>
+        </div>
+
+        <h2 class="section-title">Категорії</h2>
+        <div class="category-grid">
+            <div class="cat-card" onclick="openCategory('pod')">
+                <i class="fa-solid fa-wind"></i>
+                <span>POD-системи</span>
+            </div>
+            <div class="cat-card" onclick="openCategory('liquid')">
+                <i class="fa-solid fa-bottle-droplet"></i>
+                <span>Рідини</span>
+            </div>
+            <div class="cat-card" onclick="openCategory('disposable')">
+                <i class="fa-solid fa-battery-full"></i>
+                <span>Одноразки</span>
+            </div>
+            <div class="cat-card" onclick="openCategory('parts')">
+                <i class="fa-solid fa-gear"></i>
+                <span>Комплектуючі</span>
+            </div>
+        </div>
+
+        <h2 class="section-title">Хіти продажу 🔥</h2>
+        <div id="featured-products" class="products-row">
+            </div>
+    </section>
+
+    <section id="view-catalog" class="view hidden">
+        <div class="page-header">
+            <button class="btn-back" onclick="goHome()"><i class="fa-solid fa-arrow-left"></i> Назад</button>
+            <h2 id="catalog-title">Категорія</h2>
+        </div>
+        <div id="catalog-grid" class="products-grid">
+            </div>
+    </section>
+
+    <section id="view-product" class="view hidden">
+        <div class="page-header">
+            <button class="btn-back" onclick="goBack()"><i class="fa-solid fa-arrow-left"></i> Назад</button>
+        </div>
+        <div class="product-detail-container">
+            <div class="detail-image" id="detail-img"></div>
+            <div class="detail-info">
+                <h1 id="detail-title">Назва товару</h1>
+                <div class="detail-price"><span id="detail-price">0</span> грн</div>
+                <p class="detail-desc" id="detail-desc">Опис товару...</p>
+                
+                <div class="detail-actions">
+                    <button class="btn-main" onclick="addToCartFromDetail()">ДОДАТИ В КОШИК</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="view-cart" class="view hidden">
+        <div class="page-header">
+            <button class="btn-back" onclick="goHome()"><i class="fa-solid fa-arrow-left"></i> Меню</button>
+            <h2>Кошик</h2>
+        </div>
+        <div id="cart-items" class="cart-list">
+            </div>
+        <div class="cart-footer">
+            <div class="total">Разом: <span id="cart-total">0</span> грн</div>
+            <button class="btn-main" onclick="checkout()">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
+        </div>
+    </section>
+
+    <nav class="bottom-nav">
+        <button onclick="goHome()" class="nav-btn"><i class="fa-solid fa-house"></i><span>Головна</span></button>
+        <button onclick="openCategory('pod')" class="nav-btn"><i class="fa-solid fa-layer-group"></i><span>Каталог</span></button>
+        <button onclick="openCart()" class="nav-btn"><i class="fa-solid fa-cart-shopping"></i><span>Кошик</span></button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
